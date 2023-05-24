@@ -64,7 +64,7 @@ function implementCard (box) {
 
 
 
-// ****************prova implemento card+*********************
+// ****************prova implemento card*********************
 
 // const immagine = {
 //     img : 'img/1.jpg',
