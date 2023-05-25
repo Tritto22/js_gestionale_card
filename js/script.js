@@ -38,6 +38,7 @@ const boxItems = [
 
 implementCard(boxItems);
 pushCard();
+modCard();
 
 /*  ********function********** */
 
@@ -82,4 +83,30 @@ function pushCard () {
 function clear(input) {
     input.value = '';
     input.textContent = '';
+}
+
+function modCard() {
+    const mod = document.getElementById('mod');
+
+    mod.addEventListener('click', function () {
+        let idMod = document.getElementById('id-mod');
+        let newImg = document.getElementById('mod-img');
+        let newName = document.getElementById('mod-name');
+        let newPrice = document.getElementById('mod-price');
+        
+        for (let i = 0; i < boxItems.length; i++) {
+            if (idMod.value == boxItems[i].nome) {
+                boxItems[i].img = newImg.value;
+                boxItems[i].nome = newName.value;
+                boxItems[i].prezzo = newPrice.value;
+            }
+        }
+
+        console.log(boxItems);
+        implementCard(boxItems);
+        clear(idMod);
+        clear(newImg);
+        clear(newName);
+        clear(newPrice);
+    })
 }

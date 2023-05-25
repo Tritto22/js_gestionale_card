@@ -24,6 +24,11 @@ h1 {
     padding: 100px 100px 0 100px;
 }
 
+#modify {
+    display: flex;
+    justify-content: space-around;
+}
+
 .card {
     text-align: center;
     margin-bottom: 50px;
@@ -41,14 +46,14 @@ h1 {
     margin: 20px 0;
 }
 
-#add-card {
+#add-card, #mod-card{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 100px;
 }
 
-#add-card input {
+#add-card input, #mod-card input {
     width: 300px;
     text-align: center;
     margin: 20px;
@@ -56,7 +61,7 @@ h1 {
     border-radius: 10px;
 }
 
-#add-card button {
+#add-card button, #mod-card button {
     padding: 10px;
     width: 100px;
     border-radius: 10px;
