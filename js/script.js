@@ -1,6 +1,6 @@
-/*  ********variable********** */
+/*  ********global variable********** */
 
-const container = document.querySelector('.container');
+let container = document.querySelector('.container');
 const boxItems = [
     {
         img : 'img/1.jpg',
@@ -37,12 +37,14 @@ const boxItems = [
 /*  ********code********** */
 
 implementCard(boxItems);
-
+pushCard();
 
 /*  ********function********** */
 
 function implementCard (box) {
     let card = '';
+    let boxCards = [];
+    container.innerHTML = '';
     for (let i = 0; i < box.length; i ++) {
         card = `
             <div class="card">
@@ -50,12 +52,43 @@ function implementCard (box) {
                 <h2>${box[i].nome}</h2>
                 <h3>${box[i].prezzo}</h3>
             </div>`;
-        container.innerHTML += card;
+
+        boxCards.push(card);
+        container.innerHTML += boxCards[i];
     }
 }
 
+function pushCard () {
+    const add = document.getElementById('add');
+
+    add.addEventListener('click', function(){
+        let newImg = document.getElementById('add-img');
+        let newName = document.getElementById('add-name');
+        let newPrice = document.getElementById('add-price');
+        boxItems.push({
+            img: newImg.value,
+            nome: newName.value,
+            prezzo: newPrice.value
+        })
+
+        console.log(boxItems);
+        implementCard(boxItems);
+
+        newImg.value = '';
+        newName.value = '';
+        newPrice.value = '';
+        newImg.textContent = '';
+        newName.textContent = '';
+        newPrice.textContent = '';
+    })
+}
 
 
+// if (newImg != '' && newName != '' && newPrice != '') {
+//     newImg = '';
+//     newName = '';
+//     newPrice = '';
+// }
 
 
 
