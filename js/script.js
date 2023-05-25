@@ -73,41 +73,13 @@ function pushCard () {
 
         console.log(boxItems);
         implementCard(boxItems);
-
-        newImg.value = '';
-        newName.value = '';
-        newPrice.value = '';
-        newImg.textContent = '';
-        newName.textContent = '';
-        newPrice.textContent = '';
+        clear(newImg);
+        clear(newName);
+        clear(newPrice);
     })
 }
 
-
-// if (newImg != '' && newName != '' && newPrice != '') {
-//     newImg = '';
-//     newName = '';
-//     newPrice = '';
-// }
-
-
-
-
-
-
-
-
-// ****************prova implemento card*********************
-
-// const immagine = {
-//     img : 'img/1.jpg',
-//     nome : 'ciao',
-//     prezzo: '10€'
-// };
-
-// container.innerHTML = `
-//     <div class="card">
-//         <img src="${immagine.img}" alt="">
-//         <h2>${immagine.nome}</h2>
-//         <h3>${immagine.prezzo}</h3>
-//     </div>`;
+function clear(input) {
+    input.value = '';
+    input.textContent = '';
+}
